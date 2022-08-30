@@ -1,0 +1,38 @@
+[
+    {
+      "precio": 1000,
+      "id": 1,
+      "title": "Correa emoticon",
+      "thumbnailUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/068/331/products/251-c4ea07f4867792d75915255658058160-640-01-a301a7dbbaac56bf2e15429947082066-480-0.png"
+    },
+    {
+      "precio": 1200,
+      "id": 2,
+      "title": "Correa Anana",
+      "thumbnailUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/068/331/products/231-52ed1f46a894aad5fd15255655338964-320-01-43a63e40ead6eb4ab415323561265539-480-0.png"
+    },
+    {
+      "precio": 1000,
+      "id": 3,
+      "title": "Collar con purpurina",
+      "thumbnailUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/068/331/products/21433043_1563349053720407_3728623797535716365_n1-e315016ccd6692121b15907832648100-480-0.jpg"
+    },
+    {
+      "precio": 1100,
+      "id": 4,
+      "title": "Collar Nylon ajustable",
+      "thumbnailUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/068/331/products/images-91-560a074059c027440715476738656675-640-0.jpg"
+    },
+    {
+      "precio": 1500,
+      "id": 5,
+      "title": "Arnes camuflado",
+      "thumbnailUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/068/331/products/camuflado-blue2-f5c87572f2cebf797f15914692047559-480-031-e0f9f2a8de8321d39616128792505111-480-0.png"
+    },
+    {
+      "precio": 1500,
+      "id": 6,
+      "title": "Arnes Princes",
+      "thumbnailUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/068/331/products/magic-frente1-9e326ac0049c3b922c16358484516182-640-041-d67cc92a0ff3ded4bd16572014257780-480-0.png"
+    }
+  ]
