@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-//sweet alert
 setTimeout(() => {
     const { value: email } = Swal.fire({
         title: 'Reciba informacion sobre nuestros servicios',
@@ -35,7 +34,7 @@ items.addEventListener("click", e => {
     btnAccion(e)
 })
 
-// carga de api simulando el servidor
+// carga de api
 const fetchData = async () => {
     try {
         const res = await fetch("js/api.json")
@@ -63,7 +62,6 @@ const addCarrito = e => {
 
     if ((e.target.classList.contains("btn-dark"))) {
         setCarrito((e.target.parentElement))
-        //toastify
         Toastify({
             text: "Producto agregado correctamente",
             duration: 1000
@@ -128,8 +126,8 @@ const impFooter = () => {
     })
 }
 
+// funcion de los botones + y -
 const btnAccion = e => {
-    // funcion de los botones + y -
     if (e.target.classList.contains("btn-info")) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
