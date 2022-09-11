@@ -8,7 +8,6 @@ const templateCarrito = document.getElementById("template-carrito").content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
-// precargamos nuestros datos antes de iniciar el codigo
 document.addEventListener("DOMContentLoaded", () => {
     fetchData()
     if (localStorage.getItem("carrito")) {
@@ -45,7 +44,7 @@ const fetchData = async () => {
     }
 }
 
-// identificamos los elementos para trabajar sobre las cards y el carrito
+//funcion imprimir tarjetas
 const imprimirCards = data => {
     data.forEach(producto => {
         templateCard.querySelector("h5").textContent = producto.title
@@ -58,6 +57,7 @@ const imprimirCards = data => {
     cards.appendChild(fragment)
 }
 
+// funcion agregar al carrito
 const addCarrito = e => {
 
     if ((e.target.classList.contains("btn-dark"))) {
@@ -70,6 +70,7 @@ const addCarrito = e => {
     e.stopPropagation()
 }
 
+// funcion armar carrito
 const setCarrito = objeto => {
     const producto = {
         id: objeto.querySelector(".btn-dark").dataset.id,
@@ -84,6 +85,7 @@ const setCarrito = objeto => {
     impCarrito()
 }
 
+// funcion imprimir el carrito
 const impCarrito = () => {
     items.innerHTML = ""
     Object.values(carrito).forEach(producto => {
@@ -103,6 +105,7 @@ const impCarrito = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
+// funcion impirmir footer
 const impFooter = () => {
     footer.innerHTML = ""
     if (Object.keys(carrito).length === 0) {
@@ -111,7 +114,7 @@ const impFooter = () => {
         `
         return
     }
-    // acumulador
+
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
     const nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
     templateFoter.querySelectorAll("td")[0].textContent = nCantidad
@@ -119,6 +122,20 @@ const impFooter = () => {
     const clone = templateFoter.cloneNode(true)
     fragment.appendChild(clone)
     footer.appendChild(fragment)
+    const realizarPedido = document.getElementById("pedido");
+    realizarPedido.addEventListener("click", () => {
+        const { value: email } = Swal.fire({
+            title: 'Confirmar stock',
+            input: 'email',
+            inputLabel: 'Recibira confirmacion del stock de su pedido mediante su correo',
+            inputPlaceholder: 'Correo electronico',
+            footer: "Gracias por confiar en nosotros."
+        })
+
+        if (email) {
+            Swal.fire(`Entered email: ${email}`)
+        }
+    })
     const btnVaciar = document.getElementById("vaciar-carrito")
     btnVaciar.addEventListener("click", () => {
         carrito = {}
